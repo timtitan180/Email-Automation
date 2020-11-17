@@ -9,7 +9,7 @@ from email.message import EmailMessage
 timeout = 1200
 spacing = ' '
 port = 587
-smtp_server = "smtp.gmail.com"
+smtp_server = "smtp.gmail.com" #Server of the email provider
 server = smtp.SMTP(smtp_server, port, timeout=timeout)
 
 msg = EmailMessage()  # initializing EmailMessage class from email.message module to format email
@@ -41,7 +41,7 @@ def check_message_length(message):
 
 
 def format_subject(subject):
-    msg['Subject'] = subject  # Subject: subject
+    msg['Subject'] = subject  # Subject: (Enter Subject)
     return subject
 
 
@@ -51,7 +51,7 @@ def format_recepient(to_address):
 
 
 def format_body(message):
-    msg.set_content(message)  # message: message body
+    msg.set_content(message)  # message: (Custom message)
     return message
 
 
@@ -68,7 +68,7 @@ def main():
             on_menu = False
     server = smtp.SMTP(smtp_server, port, timeout=timeout)
 
-    email = input("Enter Email:")
+    email = input("Enter Email:") #Should say enter email-address
 
     password = input("Enter password:")
 
